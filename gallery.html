@@ -1,0 +1,261 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<script src="/mockApi.js"></script>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#331100",
+                    "on-primary-container": "#fefcff",
+                    "on-secondary-fixed-variant": "#00504e",
+                    "secondary-fixed-dim": "#72d7d3",
+                    "on-secondary-container": "#006e6c",
+                    "tertiary-fixed-dim": "#ffb68f",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#bf5500",
+                    "primary-container": "#006fee",
+                    "on-surface": "#191c1e",
+                    "on-tertiary-container": "#fffbff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#d8dadc",
+                    "primary": "#0058bf",
+                    "surface-tint": "#005ac3",
+                    "on-primary-fixed": "#001a42",
+                    "secondary-container": "#8cf0ec",
+                    "on-tertiary-fixed-variant": "#773200",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#aec6ff",
+                    "surface-container-highest": "#e0e3e5",
+                    "outline": "#727786",
+                    "surface-container-high": "#e6e8ea",
+                    "outline-variant": "#c1c6d7",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#8ff3ef",
+                    "surface-bright": "#f7f9fb",
+                    "surface-variant": "#e0e3e5",
+                    "on-surface-variant": "#414754",
+                    "on-primary-fixed-variant": "#004396",
+                    "inverse-primary": "#aec6ff",
+                    "on-secondary-fixed": "#00201f",
+                    "inverse-surface": "#2d3133",
+                    "tertiary": "#994200",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#eff1f3",
+                    "background": "#f7f9fb",
+                    "surface-container-low": "#f2f4f6",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-background": "#191c1e",
+                    "surface": "#f7f9fb",
+                    "primary-fixed": "#d8e2ff",
+                    "tertiary-fixed": "#ffdbca",
+                    "secondary": "#006a67",
+                    "surface-container": "#eceef0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-3xl shadow-sm flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="text-xl font-bold tracking-tight text-blue-800">Subhan Zia</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-600 hover:text-blue-500 transition-colors duration-300 text-sm font-medium font-inter" href="index.html">Home</a>
+<a class="text-slate-600 hover:text-blue-500 transition-colors duration-300 text-sm font-medium font-inter" href="about.html">About</a>
+<a class="text-slate-600 hover:text-blue-500 transition-colors duration-300 text-sm font-medium font-inter" href="services.html">Services</a>
+<a class="text-blue-700 border-b-2 border-blue-600 pb-1 text-sm font-medium font-inter" href="gallery.html">Gallery</a>
+<a class="text-slate-600 hover:text-blue-500 transition-colors duration-300 text-sm font-medium font-inter" href="contact.html">Contact</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="hidden md:block text-slate-600 hover:text-blue-500 transition-colors duration-300 text-sm font-medium font-inter">Login</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-semibold text-sm scale-95 hover:scale-100 transition-transform duration-200" onclick="window.location.href='book.html'">Book Appointment</button>
+<span class="material-symbols-outlined text-slate-600 cursor-pointer" data-icon="dashboard" onclick="window.location.href='dashboard.html'" style="cursor: pointer;">dashboard</span>
+</div>
+</nav>
+<main class="pt-28 pb-20">
+<!-- Hero Section -->
+<header class="max-w-7xl mx-auto px-8 mb-16 text-center md:text-left">
+<div class="inline-flex items-center px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-semibold tracking-wider uppercase mb-6">
+                Visual Experience
+            </div>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold text-on-surface tracking-tight mb-6 leading-tight" data-aos="fade-up">
+                Our Sanctuary <br> <span class="text-primary">In Focus.</span>
+</h1>
+<p class="text-lg text-on-surface-variant max-w-2xl leading-relaxed font-body">
+                Step inside the serene environments where recovery meets luxury. Every detail of our facility is designed to foster a sense of calm and professional excellence.
+            </p>
+</header>
+<!-- Bento Grid Gallery -->
+<section class="max-w-7xl mx-auto px-8" data-aos="fade-up">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Large Feature 1 -->
+<div class="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-xl bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Modern medical treatment room with large windows, soft natural light, minimalist ergonomic chair, and state-of-the-art clinical equipment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoPDp36KIwcjYUMZNtZ3jrvTkCTqsAbbLceDFbmEmjsKLc3SO9gg4wyI-y7WRr6Ql5jOKiaP3XqGk3Yd0t1QtVevxV_VBBA_ycARRpz4CJ0rlYG8WU1sHsUIlhbOlmdCikZbFvwgh-tisSPqe0ZgcbvJsFYjN7mQwn2vOVg776EPraTwTWC4neRcO89cwF6FJQDs94GX0CStH47JkWHoKuCAUZJVKcWW-y-iwGfHBHizaFzzXWzo0pZKEBR1KYmkYiK6FAQWknuw">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+<div>
+<span class="text-white/80 text-xs font-medium uppercase tracking-widest">Facility</span>
+<h3 class="text-white text-2xl font-headline font-bold">Premium Treatment Suite</h3>
+</div>
+</div>
+</div>
+<!-- Tall Feature -->
+<div class="md:col-span-1 md:row-span-2 group relative overflow-hidden rounded-xl bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Wide bright hospital corridor with clean white walls, warm wooden accents, and soft overhead diffuse lighting creating a peaceful atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPX8dWxfyr7sokmXX7GsHwik-qhchH6mlO-iKdytpLiLveBe08Grcp6y-9mxyMY0pJRvKyXEf36gccAUgNlA4QXO_Pk8uGf3F5PzS_CCfyebMP7YVHOJh6WWZ_9oyyI8KqLrYcF6kXDmnSmLMaR2YoWpP44jU0d3goiX9owUh35TUmY85DOt4gD_pbUhM1zyc97PEhBpQktIjpCvGQNFTwiDfHzNegJvr58W-fWaSc-xF_G4NSZhDig-YEvwxHNiv9S3avvb0Q6A">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+<h3 class="text-white text-xl font-headline font-bold">Main Concourse</h3>
+</div>
+</div>
+<!-- Small Grid 1 -->
+<div class="md:col-span-1 group relative overflow-hidden rounded-xl bg-surface-container-low cursor-pointer h-64">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close up of a professional hand holding a stethoscope against a soft blue background, symbolizing care and precision" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDep11lg3eONkqmdI-pQ7GS8tPltTVTE-SfUh5xn-2-gHIIdMyCj0SymM31-X4Th35jLn0PRMqlaf46UzXhqI9oaTTZ4u0gemf173b6Hr7GYQJyxTDtQVNtLchvJCOc6KTs4DrrCfJfTggRXNRrL8u6NhJm5NvLyNWRIzo2AmUTq1FZwbgV68wZU67tDlRWZK4dAZdWdMJ5EQ11mBb072VhPoj3rQ_sOWZ9nLuGdEivRvHUg7u3boRsR3a-4p-W12M5X2tZ5VsfcQ">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<h3 class="text-white text-lg font-headline font-bold">Clinical Precision</h3>
+</div>
+</div>
+<!-- Small Grid 2 -->
+<div class="md:col-span-1 group relative overflow-hidden rounded-xl bg-surface-container-low cursor-pointer h-64">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Relaxing patient lounge with comfortable plush seating, indoor plants, and soft atmospheric lighting for comfort" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJXBEO_3aSVfAu5EYlcfjzuiIqHoMyIrM5T89vY0Sf2CfL1nojEv7WcCqZ8y9dJ22dOHLY-8fOHwCo1j_zP-kIfriq_E69tyEl04vRBvQHnJUdzL4lPoaVYwu76Wt5YKQM-m73X6p9AV_bz2jQQo1vNyafnNKeDrXYIHDmLbKBe4aD49x8onPiwXGLVQ13b-4hg7JtgweGK3fJnLRiQji-UPo9adTg5VTFteZ0TW0oLz244AHe-vu9WehbDxZhJjrxmQ-bGmktvA">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<h3 class="text-white text-lg font-headline font-bold">Recovery Lounge</h3>
+</div>
+</div>
+<!-- Horizontal Feature -->
+<div class="md:col-span-2 group relative overflow-hidden rounded-xl bg-surface-container-low cursor-pointer h-80">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Advanced medical laboratory with high-tech monitors and organized sterile workspace in cool blue tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlgtvR5MT8CkYLUT_6XDxefnKP6fNJMP92goRs2hP-Z4q8OsSVSuHceAyAHe6xdTYq3-N_cBGkGLmM1a4s9HBNfJFW7-VHwsCWmdI_jNYi4imfYss91moEpHu7XAlUNgDWPRKnpIbmdpymhUGj3-93wWzxCDY8jyNxYO6BMUpwuVSJQ2bbScOcZMTsPytjIh4l3E6ZfZF8MGmRQmDExAo5V5qakwOLZFtIWObCGuXhBGuvrWuF7WI1Cd-TCLkDOm98EEUxhUg7-g">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+<div>
+<span class="text-white/80 text-xs font-medium uppercase tracking-widest">Technology</span>
+<h3 class="text-white text-2xl font-headline font-bold">Diagnostics Hub</h3>
+</div>
+</div>
+</div>
+<!-- Last Square -->
+<div class="md:col-span-2 group relative overflow-hidden rounded-xl bg-surface-container-low cursor-pointer h-80">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Group of diverse clinical specialists in a modern glass meeting room discussing patient recovery plans" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6p7iv3LDbuJ27v3vxREU-KfzvwGYW7a0xKMcXvWeH2NEWfGb2laWPfQmRyRCgOKPY8u03x79E34eX5TvpnZXcl_SwkikWFG041aTsK1rc-e5DTj0FAyFu5pat0kxdyq6Yc5hQPpFBHzQRlJIULQoRDi4WioFhrFJerRCLr4RJzrFK-Ya_58OLRCcO1C8w21-a9Xq8VNdVt6Js4uZebhUtP8JZ90vToDkaWwlvcx3e2fJZ7HK7Wxal_t2DTG_UqLr9e-nslRiS2g">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+<h3 class="text-white text-2xl font-headline font-bold">Collaborative Care</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature Section -->
+<section class="mt-32 max-w-7xl mx-auto px-8" data-aos="fade-up">
+<div class="bg-surface-container-low rounded-3xl p-12 md:p-20 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-primary-container/10 -rotate-12 translate-x-20"></div>
+<div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="text-4xl font-headline font-bold mb-6 text-on-surface tracking-tight" data-aos="fade-up">Your Journey to Wellness <br>Starts Here.</h2>
+<p class="text-on-surface-variant mb-8 text-lg leading-relaxed">
+                            Our sanctuary is designed around your peace of mind. We combine world-class medical expertise with a rehabilitative environment that feels like home.
+                        </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-primary/20 transition-all" onclick="window.location.href='book.html'">Request a Tour</button>
+<button class="bg-white text-primary border border-primary-container px-8 py-3 rounded-full font-bold hover:bg-primary-fixed-dim transition-all" onclick="window.location.href='services.html'">View All Services</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl" data-icon="verified_user">verified_user</span>
+<h4 class="font-headline font-bold text-on-surface mb-2">Certified Care</h4>
+<p class="text-sm text-on-surface-variant">Global medical standards.</p>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant/10 mt-8">
+<span class="material-symbols-outlined text-secondary mb-4 text-3xl" data-icon="spa" style="font-variation-settings: 'FILL' 1;">spa</span>
+<h4 class="font-headline font-bold text-on-surface mb-2">Serene Space</h4>
+<p class="text-sm text-on-surface-variant">Healing atmosphere.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-950 py-20 px-8 text-slate-400">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+<div class="md:col-span-1">
+<div class="text-2xl font-bold text-white mb-8">Subhan Zia | Physical Therapy</div>
+<p class="leading-relaxed mb-8">Physical Therapist, Rehabilitation Medicine Specialist, and Sports Scientist.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors" href="https://linkedin.com/in/SUBHANZIA" target="_blank">
+<span class="material-symbols-outlined text-white text-sm">link</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors" href="mailto:subhan.zia16@gmail.com">
+<span class="material-symbols-outlined text-white text-sm">mail</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold mb-8 uppercase tracking-widest text-sm">Explore</h4>
+<ul class="space-y-4">
+<li><a class="hover:text-primary transition-colors" href="index.html">Home</a></li>
+<li><a class="hover:text-primary transition-colors" href="about.html">About</a></li>
+<li><a class="hover:text-primary transition-colors" href="services.html">Services</a></li>
+<li><a class="hover:text-primary transition-colors" href="gallery.html">Gallery</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-8 uppercase tracking-widest text-sm">Legal</h4>
+<ul class="space-y-4">
+<li><a class="hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="terms.html">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-8 uppercase tracking-widest text-sm">Contact</h4>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span>Faisalabad, Pakistan</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">call</span>
+<span>+92 343 3172605</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span>subhan.zia16@gmail.com</span>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+<p class="text-sm">© 2024 Subhan Zia. All rights reserved.</p>
+</div>
+</footer>
+<!-- FAB -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-3xl" data-icon="add_box" style="font-variation-settings: 'FILL' 1;">add_box</span>
+</button>
+</div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script>setTimeout(() => AOS.init({ duration: 800, once: true }), 100);</script></body></html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<script src="/mockApi.js"></script>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Settings | Admin Portal - Subhan Zia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#331100",
+                        "on-primary-container": "#fefcff",
+                        "on-secondary-fixed-variant": "#00504e",
+                        "secondary-fixed-dim": "#72d7d3",
+                        "on-secondary-container": "#006e6c",
+                        "tertiary-fixed-dim": "#ffb68f",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#bf5500",
+                        "primary-container": "#006fee",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "primary": "#0058bf",
+                        "surface-tint": "#005ac3",
+                        "on-primary-fixed": "#001a42",
+                        "secondary-container": "#8cf0ec",
+                        "on-tertiary-fixed-variant": "#773200",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#aec6ff",
+                        "surface-container-highest": "#e0e3e5",
+                        "outline": "#727786",
+                        "surface-container-high": "#e6e8ea",
+                        "outline-variant": "#c1c6d7",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#8ff3ef",
+                        "surface-bright": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "on-surface-variant": "#414754",
+                        "on-primary-fixed-variant": "#004396",
+                        "inverse-primary": "#aec6ff",
+                        "on-secondary-fixed": "#00201f",
+                        "inverse-surface": "#2d3133",
+                        "tertiary": "#994200",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "background": "#f7f9fb",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-background": "#191c1e",
+                        "surface": "#f7f9fb",
+                        "primary-fixed": "#d8e2ff",
+                        "tertiary-fixed": "#ffdbca",
+                        "secondary": "#006a67",
+                        "surface-container": "#eceef0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            background: rgba(247, 249, 251, 0.7);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></head>
+<body class="bg-surface font-body text-on-surface flex overflow-hidden h-screen">
+<!-- SideNavBar (Authority Source: JSON) -->
+<aside class="h-screen w-64 bg-slate-50 flex flex-col py-6 shrink-0">
+<div class="px-8 mb-10">
+<h1 class="text-lg font-black text-blue-700" data-aos="fade-up">Admin Portal</h1>
+<p class="text-xs font-manrope font-semibold text-slate-500">Physical Therapy</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Inactive: Overview -->
+<a onclick="window.location.href='dashboard.html'" class="text-slate-500 hover:text-blue-500 px-8 py-3 flex items-center gap-3 hover:bg-slate-200/50 transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-manrope text-sm">Overview</span>
+</a>
+<!-- Inactive: Appointments -->
+<a class="text-slate-500 hover:text-blue-500 px-8 py-3 flex items-center gap-3 hover:bg-slate-200/50 transition-colors" href="appointments.html">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="font-manrope text-sm">Appointments</span>
+</a>
+<!-- Inactive: Calendar -->
+<a class="text-slate-500 hover:text-blue-500 px-8 py-3 flex items-center gap-3 hover:bg-slate-200/50 transition-colors" href="calendar.html">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-manrope text-sm">Calendar</span>
+</a>
+<!-- Inactive: Patients -->
+<a class="text-slate-500 hover:text-blue-500 px-8 py-3 flex items-center gap-3 hover:bg-slate-200/50 transition-colors" href="patients.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-manrope text-sm">Patients</span>
+</a>
+<!-- Active: Settings -->
+<a class="text-blue-700 font-bold bg-white rounded-l-full ml-4 pl-4 py-3 flex items-center gap-3 mt-auto" href="settings.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-manrope text-sm">Settings</span>
+</a>
+</nav>
+<div class="px-8 pt-6 border-t border-slate-100">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold overflow-hidden">
+<img alt="Clinic Admin Profile" class="w-full h-full object-cover" data-alt="professional portrait of a male doctor in a white clinical coat with a soft neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByLknFe2a72gHwdBFBGc42jDAy-W4H42cmDDwAassaUbazzYB_YhRXp2xIPBpxGe8f6sz4tMvJlziGpKZAdGZ2fAu8eJuOYfoL6cM3HT3D2h-cGnkz0_HZqZcWx14D9gdQUNwmGwjqU4OWRQ4-k1_ftwCce_6gQOzJ9_Z4faKtlVceRIpWtt2_rKvw4CYtTRdYb5V1b_RdDp6ksHMBa6zguBd4WafL36KCPmWSRYxvQUox_i0nxTmEpnS3DGqFPML5savfyhxPMg">
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface">Dr. Subhan Zia</p>
+<p class="text-[10px] text-slate-400">Doctor of Physical Therapy</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto bg-surface relative">
+<!-- TopNavBar (Authority Source: JSON) -->
+<header class="sticky top-0 w-full z-40 glass-header flex justify-between items-center px-6 py-3">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative max-w-md w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-xs focus:ring-2 focus:ring-primary/20 placeholder:text-slate-400 transition-all" placeholder="Search patients, reports, or history..." type="text">
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="hover:bg-slate-100 p-2 rounded-full transition-all duration-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400" data-icon="notifications">notifications</span>
+</button>
+<button onclick="logout()" title="Logout" class="hover:bg-slate-100 p-2 rounded-full transition-all duration-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400" data-icon="account_circle">logout</span>
+</button>
+</div>
+</header>
+<div class="p-8 max-w-5xl mx-auto space-y-8" data-aos="fade-up">
+    <!-- Header -->
+    <section class="flex flex-col md:flex-row md:items-end justify-between gap-4" data-aos="fade-up">
+        <div>
+            <h2 class="text-4xl font-bold font-headline text-on-surface tracking-tight">Settings</h2>
+            <p class="text-on-surface-variant mt-2 font-medium">Manage clinic preferences, profile, and security configurations.</p>
+        </div>
+    </section>
+
+    <!-- Settings Layout: Sidebar + Main -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Settings Sub-Nav -->
+        <div class="md:col-span-1">
+            <div class="bg-surface-container-lowest rounded-2xl border border-slate-100 p-2 space-y-1">
+                <button onclick="showSection('profile')" id="tab-profile" class="settings-tab w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-3 text-blue-700 bg-primary/5">
+                    <span class="material-symbols-outlined text-[20px]">person</span> Profile
+                </button>
+                <button onclick="showSection('security')" id="tab-security" class="settings-tab w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-3 text-slate-500 hover:bg-slate-50 transition-colors">
+                    <span class="material-symbols-outlined text-[20px]">lock</span> Security
+                </button>
+                <button onclick="showSection('notifications')" id="tab-notifications" class="settings-tab w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-3 text-slate-500 hover:bg-slate-50 transition-colors">
+                    <span class="material-symbols-outlined text-[20px]">notifications</span> Notifications
+                </button>
+                <button onclick="showSection('clinic')" id="tab-clinic" class="settings-tab w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-3 text-slate-500 hover:bg-slate-50 transition-colors">
+                    <span class="material-symbols-outlined text-[20px]">business</span> Clinic Info
+                </button>
+            </div>
+        </div>
+
+        <!-- Settings Panels -->
+        <div class="md:col-span-3 space-y-6">
+
+            <!-- Profile Panel -->
+            <div id="section-profile" class="settings-section bg-surface-container-lowest rounded-2xl border border-slate-100 p-8">
+                <div class="flex items-center gap-6 mb-8 pb-8 border-b border-slate-100">
+                    <div class="w-20 h-20 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-2xl overflow-hidden">
+                        <img alt="Doctor profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByLknFe2a72gHwdBFBGc42jDAy-W4H42cmDDwAassaUbazzYB_YhRXp2xIPBpxGe8f6sz4tMvJlziGpKZAdGZ2fAu8eJuOYfoL6cM3HT3D2h-cGnkz0_HZqZcWx14D9gdQUNwmGwjqU4OWRQ4-k1_ftwCce_6gQOzJ9_Z4faKtlVceRIpWtt2_rKvw4CYtTRdYb5V1b_RdDp6ksHMBa6zguBd4WafL36KCPmWSRYxvQUox_i0nxTmEpnS3DGqFPML5savfyhxPMg">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold font-headline">Dr. Subhan Zia</h3>
+                        <p class="text-sm text-on-surface-variant">Chief Osteopath</p>
+                        <button class="mt-2 text-xs text-primary font-bold hover:underline">Change Photo</button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">First Name</label>
+                        <input type="text" value="Julian" class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Last Name</label>
+                        <input type="text" value="Zia" class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Email Address</label>
+                        <input type="email" value="subhan.zia16@gmail.com" class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Job Title</label>
+                        <input type="text" value="Chief Osteopath" class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20">
+                    </div>
+                    <div class="space-y-2 md:col-span-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Bio</label>
+                        <textarea rows="3" class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20 resize-none">Specialist in osteopathic rehabilitation with over 12 years of clinical experience.</textarea>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-end gap-3">
+                    <button class="px-5 py-2 rounded-xl border border-slate-200 text-sm font-semibold text-slate-500 hover:bg-slate-50 transition-colors">Cancel</button>
+                    <button onclick="alert('Profile saved successfully!')" class="px-5 py-2 rounded-xl bg-primary text-on-primary text-sm font-semibold hover:opacity-90 transition-all">Save Changes</button>
+                </div>
+            </div>
+
+            <!-- Security Panel -->
+            <div id="section-security" class="settings-section hidden bg-surface-container-lowest rounded-2xl border border-slate-100 p-8">
+                <h3 class="text-lg font-bold font-headline mb-6">Security & Access</h3>
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Current Password</label>
+                        <input type="password" placeholder="••••••••" class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">New Password</label>
+                            <input type="password" placeholder="••••••••" class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Confirm Password</label>
+                            <input type="password" placeholder="••••••••" class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20">
+                        </div>
+                    </div>
+                    <div class="bg-primary-fixed/30 rounded-xl p-4 flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-bold">Two-Factor Authentication</p>
+                            <p class="text-xs text-on-surface-variant mt-0.5">Add an extra layer of security to your account.</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" checked>
+                            <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-end gap-3">
+                    <button onclick="alert('Password updated successfully!')" class="px-5 py-2 rounded-xl bg-primary text-on-primary text-sm font-semibold hover:opacity-90 transition-all">Update Password</button>
+                </div>
+            </div>
+
+            <!-- Notifications Panel -->
+            <div id="section-notifications" class="settings-section hidden bg-surface-container-lowest rounded-2xl border border-slate-100 p-8">
+                <h3 class="text-lg font-bold font-headline mb-6">Notification Preferences</h3>
+                <div class="space-y-5">
+                    <div class="flex items-center justify-between py-4 border-b border-slate-100">
+                        <div>
+                            <p class="text-sm font-bold">Email Notifications</p>
+                            <p class="text-xs text-on-surface-variant mt-0.5">Receive appointment summaries and system alerts by email.</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" checked>
+                            <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-between py-4 border-b border-slate-100">
+                        <div>
+                            <p class="text-sm font-bold">SMS Alerts</p>
+                            <p class="text-xs text-on-surface-variant mt-0.5">Get instant text message alerts for new booking requests.</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer">
+                            <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-between py-4 border-b border-slate-100">
+                        <div>
+                            <p class="text-sm font-bold">Weekly Reports</p>
+                            <p class="text-xs text-on-surface-variant mt-0.5">Receive a weekly summary of patient activity and clinic performance.</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" checked>
+                            <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-between py-4">
+                        <div>
+                            <p class="text-sm font-bold">Appointment Reminders</p>
+                            <p class="text-xs text-on-surface-variant mt-0.5">Automatically notify patients 24hrs before their appointments.</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" checked>
+                            <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-end">
+                    <button onclick="alert('Notification preferences saved!')" class="px-5 py-2 rounded-xl bg-primary text-on-primary text-sm font-semibold hover:opacity-90 transition-all">Save Preferences</button>
+                </div>
+            </div>
+
+            <!-- Clinic Info Panel -->
+            <div id="section-clinic" class="settings-section hidden bg-surface-container-lowest rounded-2xl border border-slate-100 p-8">
+                <h3 class="text-lg font-bold font-headline mb-6">Clinic Information</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2 md:col-span-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Clinic Name</label>
+                        <input type="text" value="Subhan Zia" class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Phone Number</label>
+                        <input type="tel" value="+1 (555) 234-5678" class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Working Hours</label>
+                        <input type="text" value="Mon–Fri, 9am–6pm" class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20">
+                    </div>
+                    <div class="space-y-2 md:col-span-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Clinic Address</label>
+                        <input type="text" value="Suite 400, 12 Wellness Ave, Sydney NSW 2000" class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-primary/20">
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-end gap-3">
+                    <button onclick="alert('Clinic info saved successfully!')" class="px-5 py-2 rounded-xl bg-primary text-on-primary text-sm font-semibold hover:opacity-90 transition-all">Save Changes</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Footer (Authority Source: JSON) -->
+<footer class="w-full py-12 px-8 bg-slate-50 mt-12 border-t-0">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-2">
+<h3 class="text-lg font-bold text-blue-700 mb-4">Subhan Zia</h3>
+<p class="text-sm font-inter text-slate-500 max-w-xs">Providing ethereal care and professional rehabilitation in a sanctuary designed for recovery and wellness.</p>
+</div>
+<div class="flex flex-col gap-3">
+<p class="text-xs font-bold text-blue-800 uppercase tracking-widest mb-2">Internal Links</p>
+<a class="text-sm font-inter text-slate-500 hover:text-blue-500 transition-opacity opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-sm font-inter text-slate-500 hover:text-blue-500 transition-opacity opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-sm font-inter text-slate-500 hover:text-blue-500 transition-opacity opacity-80 hover:opacity-100" href="contact.html">Contact Us</a>
+</div>
+<div class="flex flex-col gap-3">
+<p class="text-xs font-bold text-blue-800 uppercase tracking-widest mb-2">Systems</p>
+<a class="text-sm font-inter text-slate-500 hover:text-blue-500 transition-opacity opacity-80 hover:opacity-100" href="#">Patient Portal</a>
+<a class="text-sm font-inter text-slate-500 hover:text-blue-500 transition-opacity opacity-80 hover:opacity-100" href="#">Lab Reports</a>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-200">
+<p class="text-sm font-inter text-slate-400">© 2024 Subhan Zia. All rights reserved.</p>
+</div>
+</footer>
+</main>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script>setTimeout(() => AOS.init({ duration: 800, once: true }), 100);</script><script src="/settingsLogic.js"></script></body></html>
